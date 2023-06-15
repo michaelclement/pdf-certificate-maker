@@ -2,9 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+#app {
+  height: 100vh;
+}
+
+iframe {
+  height: 100%;
+  width: 100%;
+}
+
 /*Example of bundling a bunch of tailwind classes into a single reusable class:*/
 @layer components {
   .primary-btn {
-    @apply bg-blue-950 w-[120px] h-[35px] text-white rounded-lg p-[3px] my-[5px] 
+    @apply bg-blue-950 w-[120px] h-[35px] text-white rounded-lg p-[3px] my-[5px]
   }
 }
