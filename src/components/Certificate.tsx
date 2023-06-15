@@ -1,7 +1,4 @@
-import { useState } from 'react';
 import { Page, Text, Image, View, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
-
-// import GridImg from "../assets/grid.jpg";
 
 // Create styles
 const styles = StyleSheet.create({
