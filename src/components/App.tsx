@@ -7,6 +7,7 @@ import Certificate from './Certificate';
 import Controls from './Controls';
 
 import GridImg from '../assets/grid.jpg';
+import Customizer from './Customizer';
 
 export default function App() {
   const [userId, setUserId] = useState(1); // Example state
@@ -39,7 +40,7 @@ export default function App() {
           Basic React App (TypeScript, Tailwind, Webpack)
         </h1>
 
-        {showPdf ? <Certificate bg={bgImg} /> : ''}
+        {showPdf ? <Certificate bg={bgImg} /> : <Customizer bg={bgImg}></Customizer>}
 
         <Controls upload={handleRequestUpload} show={handleShowPdf}/>
 
