@@ -6,6 +6,10 @@
   height: 100vh;
 }
 
+#header-zone {
+  box-shadow: 3px 3px rgb(234 179 8 / var(--tw-text-opacity))
+}
+
 iframe {
   height: 100%;
   width: 100%;
@@ -16,12 +20,27 @@ iframe {
 }
 
 #pdf-preview {
-  box-shadow: 3px 3px rgb(234 179 8 )
+  box-shadow: 3px 3px rgb(234 179 8)
+}
+
+.green-btn,
+.yellow-btn {
+  transition-duration: .2s;
+  box-shadow: 3px 3px rgb(39 39 42 / var(--tw-border-opacity));
+}
+
+.green-btn:hover,
+.yellow-btn:hover {
+  box-shadow: 5px 5px rgb(39 39 42 / var(--tw-border-opacity));
 }
 
 /*Example of bundling a bunch of tailwind classes into a single reusable class:*/
 @layer components {
   .primary-btn {
     @apply bg-blue-950 w-[120px] h-[35px] text-white rounded-lg p-[3px] my-[5px]
+  }
+
+  tr:nth-child(even) {
+    @apply bg-zinc-300
   }
 }
