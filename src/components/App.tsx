@@ -48,19 +48,23 @@ export default function App() {
 
   return (
     <>
-      <div className='w-full flex flex-col justify-between h-full'>
-        <h1 id='header-zone' className='text-2xl font-bold text-zinc-900 border-b-4 border-zinc-800 p-5'>
+      <div className='w-full flex flex-col h-full'>
+        <h1 id='header-zone' className='text-2xl font-bold text-zinc-900 border-b-4 border-zinc-800 p-5 sticky top-0 bg-white z-10'>
           Bulk PDF Generator
         </h1>
 
         {showPdf ? <Certificate bg={bgImg} dataSource={dataSource}
           tops={[nameTopMargin, dateTopMargin]} /> :
-          <Customizer bg={bgImg} tops={[nameTopMargin, dateTopMargin]}
-            setNameTop={setNameTopMargin} setDateTop={setDateTopMargin}></Customizer>
+          <div className='pb-[100px]'>
+            <Customizer bg={bgImg} tops={[nameTopMargin, dateTopMargin]}
+              setNameTop={setNameTopMargin} setDateTop={setDateTopMargin}></Customizer>
+            {csv !== '' && !showPdf ? <CsvViewer csv={csv} setDataSource={setDataSource} /> : ''}
+          </div>
         }
-        {csv !== '' && !showPdf ? <CsvViewer csv={csv} setDataSource={setDataSource} /> : ''}
 
-        <Controls upload={handleRequestUpload} show={handleShowPdf} showPdf={showPdf} />
+        <div className='fixed bottom-0 w-full'>
+          <Controls upload={handleRequestUpload} show={handleShowPdf} showPdf={showPdf} />
+        </div>
 
       </div>
 

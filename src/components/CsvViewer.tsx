@@ -55,7 +55,7 @@ export default function CsvViewer(props: any) {
   }
 
   return (
-    <div className='h-full w-full mt-10'>
+    <div className='w-full mt-10'>
 
       <h1 id='pdf-preview-title' className='text-center rounded-lg text-zinc-800 p-3 font-bold text-3xl
         h-[60px] w-[200px] m-auto'>CSV Data</h1>

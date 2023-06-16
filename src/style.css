@@ -34,6 +34,10 @@ iframe {
   box-shadow: 5px 5px rgb(39 39 42 / var(--tw-border-opacity));
 }
 
+.range {
+  box-shadow: 3px 3px rgb(234 179 8);
+}
+
 /*Example of bundling a bunch of tailwind classes into a single reusable class:*/
 @layer components {
   .primary-btn {

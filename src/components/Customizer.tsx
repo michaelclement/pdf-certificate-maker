@@ -24,20 +24,22 @@ export default function Customizer(props: any) {
         m-auto bg-no-repeat bg-center bg-cover overflow-hidden' style={{
             backgroundImage: `url(${props.bg})`
           }}>
-          <p className='relative w-full text-center h-[0px]' style={{top: `${props.tops[0]}%`}}>&lt;NAME&gt;</p>
-          <p className='relative w-full text-center h-[0px]' style={{top: `${props.tops[1]}%`}}>&lt;DATE&gt;</p>
+          <p className='relative w-full text-center h-[0px]' style={{ top: `${props.tops[0]}%` }}>&lt;NAME&gt;</p>
+          <p className='relative w-full text-center h-[0px]' style={{ top: `${props.tops[1]}%` }}>&lt;DATE&gt;</p>
         </div>
       </div>
 
-      <div className='flex justify-center'>
-        <label htmlFor={'name-vert'}>Adjust name vertical placement</label>
-        <input name='name-vet' className='w-[200px] my-[5px]' type={'range'}
+      <div className='flex justify-center my-5'>
+        <label htmlFor={'name-vert'} className='font-mono'>Adjust name vertical placement</label>
+        <input name='name-vet' className='range w-[200px] my-[5px] ml-[15px] h-2 bg-zinc-800 
+          rounded-lg appearance-none cursor-pointer dark:bg-gray-700' type={'range'}
           value={props.tops[0]} onChange={handleNameSlider}></input>
       </div>
 
       <div className='flex justify-center'>
-        <label htmlFor={'date-vert'}>Adjust date vertical placement</label>
-        <input name='date-vet' className='w-[200px] my-[5px]' type={'range'}
+        <label htmlFor={'date-vert'} className='font-mono'>Adjust date vertical placement</label>
+        <input name='date-vet' className='range w-[200px] my-[5px] ml-[15px] h-2 bg-zinc-800 
+          rounded-lg appearance-none cursor-pointer dark:bg-gray-700' type={'range'}
           value={props.tops[1]} onChange={handleDateSlider}></input>
       </div>
 
