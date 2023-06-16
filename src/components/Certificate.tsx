@@ -49,10 +49,6 @@ const styles = StyleSheet.create({
 
 export default function Certificate(props: any) {
 
-  useEffect(() => {
-    console.log("Datasource: ", props.dataSource);
-  }, [props.dataSource]);
-
   return (
     <div className='w-5/6 h-5/6 mx-auto'>
       <PDFViewer>
@@ -60,7 +56,7 @@ export default function Certificate(props: any) {
           {props.dataSource.length > 0 ?
             props.dataSource.map((row: any) => {
               if (Object.keys(row).length != 0) {
-                return <Page size='A4' orientation='landscape' style={styles.page}>
+                return <Page key={`${row}`} size='A4' orientation='landscape' style={styles.page}>
                   <View style={styles.parent}>
                     <Image style={styles.bgImg} src={props.bg} />
                     <Text style={styles.nameText}>{row['Name']}</Text>

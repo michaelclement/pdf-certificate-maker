@@ -54,7 +54,7 @@ export default function App() {
         {showPdf ? <Certificate bg={bgImg} dataSource={dataSource}/> : <Customizer bg={bgImg}></Customizer>}
         {csv !== '' && !showPdf ? <CsvViewer csv={csv} setDataSource={setDataSource}/> : ''}
 
-        <Controls upload={handleRequestUpload} show={handleShowPdf} />
+        <Controls upload={handleRequestUpload} show={handleShowPdf} showPdf={showPdf}/>
 
       </div>
 
