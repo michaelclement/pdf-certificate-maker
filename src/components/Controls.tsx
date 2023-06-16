@@ -11,21 +11,21 @@ export default function Controls(props: any) {
       flex flex-row items-center justify-between'>
 
       <div className='flex'>
-        <button className='rounded-lg bg-green-500 text-white p-3 font-bold 
-        h-[50px] m-[15px] flex' onClick={() => props.upload('image')}>
+        <button className='bg-green-500 text-white p-3 font-bold 
+        h-[50px] m-[15px] flex green-btn' onClick={() => props.upload('image')}>
           Upload Background
           <img className='ml-[5px]' src={AddImg}></img>
         </button>
 
-        <button className='rounded-lg bg-green-500 text-white p-3 font-bold 
-        h-[50px] m-[15px] flex' onClick={() => props.upload('csv')}>
+        <button className='bg-green-500 text-white p-3 font-bold 
+        h-[50px] m-[15px] flex green-btn' onClick={() => props.upload('csv')}>
           Upload CSV
           <img className='ml-[5px]' src={AddCsv}></img>
         </button>
       </div>
 
-      <button className='rounded-lg bg-yellow-500 text-zinc-800 p-3 font-bold 
-        h-[50px] m-[15px] flex' onClick={props.show}>
+      <button className='bg-yellow-500 text-zinc-800 p-3 font-bold 
+        h-[50px] m-[15px] flex yellow-btn' onClick={props.show}>
         Generate PDF
         <img className='ml-[5px]' src={Magic}></img>
       </button>

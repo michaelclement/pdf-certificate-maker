@@ -41,7 +41,7 @@ export default function App() {
   return (
     <>
       <div className='w-full flex flex-col justify-between h-full'>
-        <h1 className='text-2xl font-bold text-zinc-900 border-b-4 border-zinc-800 p-5'>
+        <h1 id='header-zone' className='text-2xl font-bold text-zinc-900 border-b-4 border-zinc-800 p-5'>
           Basic React App (TypeScript, Tailwind, Webpack)
         </h1>
 
