@@ -15,6 +15,8 @@ export default function App() {
   const [csv, setCsv] = useState('');
   const [dataSource, setDataSource] = useState([]);
   const [showPdf, setShowPdf] = useState(false);
+  const [nameTopMargin, setNameTopMargin] = useState(35);
+  const [dateTopMargin, setDateTopMargin] = useState(55);
 
   const imgUploadRef = useRef<HTMLInputElement>(null);
   const csvUploadRef = useRef<HTMLInputElement>(null);
@@ -51,10 +53,14 @@ export default function App() {
           Bulk PDF Generator
         </h1>
 
-        {showPdf ? <Certificate bg={bgImg} dataSource={dataSource}/> : <Customizer bg={bgImg}></Customizer>}
-        {csv !== '' && !showPdf ? <CsvViewer csv={csv} setDataSource={setDataSource}/> : ''}
+        {showPdf ? <Certificate bg={bgImg} dataSource={dataSource}
+          tops={[nameTopMargin, dateTopMargin]} /> :
+          <Customizer bg={bgImg} tops={[nameTopMargin, dateTopMargin]}
+            setNameTop={setNameTopMargin} setDateTop={setDateTopMargin}></Customizer>
+        }
+        {csv !== '' && !showPdf ? <CsvViewer csv={csv} setDataSource={setDataSource} /> : ''}
 
-        <Controls upload={handleRequestUpload} show={handleShowPdf} showPdf={showPdf}/>
+        <Controls upload={handleRequestUpload} show={handleShowPdf} showPdf={showPdf} />
 
       </div>
 
