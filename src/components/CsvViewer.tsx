@@ -25,6 +25,7 @@ export default function CsvViewer(props: any) {
 
     setCsvRows(rowObj);
     setCsvHeaders(cleanHeaders);
+    props.setDataSource(rowObj);
 
   }, [props.csv]);
 
