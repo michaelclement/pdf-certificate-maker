@@ -57,13 +57,18 @@ export default function Certificate(props: any) {
     <div className='w-5/6 h-5/6 mx-auto'>
       <PDFViewer>
         <Document>
-          <Page size='A4' orientation='landscape' style={styles.page}>
-            <View style={styles.parent}>
-              <Image style={styles.bgImg} src={props.bg} />
-              <Text style={styles.nameText}>Name Here</Text>
-              <Text style={styles.dateText}>Date Here</Text>
-            </View>
-          </Page>
+          {props.dataSource.length > 0 ?
+            props.dataSource.map((row: any) => {
+              if (Object.keys(row).length != 0) {
+                return <Page size='A4' orientation='landscape' style={styles.page}>
+                  <View style={styles.parent}>
+                    <Image style={styles.bgImg} src={props.bg} />
+                    <Text style={styles.nameText}>{row['Name']}</Text>
+                    <Text style={styles.dateText}>{row['Date']}</Text>
+                  </View>
+                </Page>
+              }
+            }) : <></>}
         </Document>
       </PDFViewer>
     </div>
