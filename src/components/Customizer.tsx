@@ -8,11 +8,14 @@ import Magic from '../assets/auto_awesome_black_24dp.svg';
 // which makes this tool generally more useful. 
 
 export default function Customizer(props: any) {
-  const [orientation, setOrientation] = useState('landscape');
 
   return (
     <div className='h-full w-full mt-10'>
-      <div className='h-[400px] w-[576px] bg-zinc-300 border-4 border-zinc-800 
+
+      <h1 id='pdf-preview-title' className='text-center rounded-lg text-zinc-800 p-3 font-bold text-3xl
+        h-[50px] w-[200px] m-auto'>PDF Preview</h1>
+
+      <div id='pdf-preview' className='h-[400px] w-[576px] bg-zinc-300 border-4 border-zinc-800 
         m-auto bg-no-repeat bg-center bg-contain' style={{
           backgroundImage: `url(${props.bg})`
         }}>
