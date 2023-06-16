@@ -10,6 +10,8 @@ import GridImg from '../assets/grid.jpg';
 import Customizer from './Customizer';
 import CsvViewer from './CsvViewer';
 
+import Help from '../assets/help_center_FILL0_wght400_GRAD0_opsz48.svg';
+
 export default function App() {
   const [bgImg, setBgImg] = useState(GridImg);
   const [csv, setCsv] = useState('');
@@ -46,11 +48,21 @@ export default function App() {
     setShowPdf(!showPdf);
   }
 
+  function handleShowHelp() {
+    alert('Upload a background image and a CSV of names/dates. Then click "Generate PDF" and voila!');
+  }
+
   return (
     <>
       <div className='w-full flex flex-col h-full'>
-        <h1 id='header-zone' className='text-2xl font-bold text-zinc-900 border-b-4 border-zinc-800 p-5 sticky top-0 bg-white z-10'>
-          Bulk PDF Generator
+        <h1 id='header-zone' className='text-2xl font-bold text-zinc-900 
+          border-b-4 border-zinc-800 p-5 sticky top-0 bg-white z-10 flex justify-between'>
+          <span>Bulk PDF Generator</span>
+
+          <button className='bg-zinc-800 text-white font-bold h-[35px] w-[35px] 
+            flex green-btn pt-[3px]' onClick={handleShowHelp}>
+            <img className='ml-[5px]' src={Help}></img>
+          </button>
         </h1>
 
         {showPdf ? <Certificate bg={bgImg} dataSource={dataSource}
