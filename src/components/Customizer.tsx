@@ -1,7 +1,3 @@
-import { useState } from 'react';
-import AddImg from '../assets/add_photo_alternate_white_24dp.svg';
-import Magic from '../assets/auto_awesome_black_24dp.svg';
-
 // The purpose of this component is to provide an analogue for the
 // actual PDF, where the user can drag and drop text fields. This will
 // allow the user some control over text-field placement on the actual certs, 
