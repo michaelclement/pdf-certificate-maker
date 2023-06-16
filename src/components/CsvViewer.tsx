@@ -15,7 +15,7 @@ export default function CsvViewer(props: any) {
       let row: any = {}
       header.split(',').forEach((columnName: string, headerIdx: number) => {
         columnName = columnName.trim();
-        cleanHeaders.push(columnName);
+        if (!cleanHeaders.includes(columnName)) cleanHeaders.push(columnName);
         if (el != '') {
           row[columnName] = el.split(',')[headerIdx].trim();
         };
@@ -23,8 +23,14 @@ export default function CsvViewer(props: any) {
       rowObj.push(row);
     });
 
+    if (!cleanHeaders.includes('Name') || !cleanHeaders.includes('Date')) {
+      alert(`CSV headers mismatch. "Name" and "Date" columns must be present.`)
+      return;
+    }
+
     setCsvRows(rowObj);
     setCsvHeaders(cleanHeaders);
+    props.setDataSource(rowObj);
 
   }, [props.csv]);
 

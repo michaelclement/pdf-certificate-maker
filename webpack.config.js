@@ -36,7 +36,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Basic React App',
+      title: 'Bulk PDF Generator',
       template: './src/index.html',
     }),
   ],

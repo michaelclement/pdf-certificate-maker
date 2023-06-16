@@ -13,6 +13,7 @@ import CsvViewer from './CsvViewer';
 export default function App() {
   const [bgImg, setBgImg] = useState(GridImg);
   const [csv, setCsv] = useState('');
+  const [dataSource, setDataSource] = useState([]);
   const [showPdf, setShowPdf] = useState(false);
 
   const imgUploadRef = useRef<HTMLInputElement>(null);
@@ -47,13 +48,13 @@ export default function App() {
     <>
       <div className='w-full flex flex-col justify-between h-full'>
         <h1 id='header-zone' className='text-2xl font-bold text-zinc-900 border-b-4 border-zinc-800 p-5'>
-          Basic React App (TypeScript, Tailwind, Webpack)
+          Bulk PDF Generator
         </h1>
 
-        {showPdf ? <Certificate bg={bgImg} /> : <Customizer bg={bgImg}></Customizer>}
-        {csv !== '' ? <CsvViewer csv={csv} /> : ''}
+        {showPdf ? <Certificate bg={bgImg} dataSource={dataSource}/> : <Customizer bg={bgImg}></Customizer>}
+        {csv !== '' && !showPdf ? <CsvViewer csv={csv} setDataSource={setDataSource}/> : ''}
 
-        <Controls upload={handleRequestUpload} show={handleShowPdf} />
+        <Controls upload={handleRequestUpload} show={handleShowPdf} showPdf={showPdf}/>
 
       </div>
 

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import AddImg from '../assets/add_photo_alternate_white_24dp.svg';
 import AddCsv from '../assets/csv_FILL0_wght400_GRAD0_opsz48.svg';
 import Magic from '../assets/auto_awesome_black_24dp.svg';
+import Return from '../assets/undo_FILL0_wght400_GRAD0_opsz48.svg';
 
 export default function Controls(props: any) {
   const [orientation, setOrientation] = useState('landscape');
@@ -26,8 +27,16 @@ export default function Controls(props: any) {
 
       <button className='bg-yellow-500 text-zinc-800 p-3 font-bold 
         h-[50px] m-[15px] flex yellow-btn' onClick={props.show}>
-        Generate PDF
-        <img className='ml-[5px]' src={Magic}></img>
+        {props.showPdf ?
+          <>
+            <span>Return to Preview</span>
+            <img className='ml-[5px]' src={Return}></img>
+          </> :
+          <>
+            <span>Generate PDF</span>
+            <img className='ml-[5px]' src={Magic}></img>
+          </>
+        }
       </button>
     </div>
   );
