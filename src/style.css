@@ -11,6 +11,14 @@ iframe {
   width: 100%;
 }
 
+#pdf-preview-title {
+  text-shadow: 3px 3px rgb(234 179 8 / var(--tw-text-opacity));
+}
+
+#pdf-preview {
+  box-shadow: 3px 3px rgb(234 179 8 )
+}
+
 /*Example of bundling a bunch of tailwind classes into a single reusable class:*/
 @layer components {
   .primary-btn {

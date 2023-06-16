@@ -10,23 +10,28 @@ import GridImg from '../assets/grid.jpg';
 import Customizer from './Customizer';
 
 export default function App() {
-  const [userId, setUserId] = useState(1); // Example state
-  const [bgImg, setBgImg] = useState(GridImg); // Example state
+  const [bgImg, setBgImg] = useState(GridImg);
+  const [csv, setCsv] = useState('');
   const [showPdf, setShowPdf] = useState(false);
 
-  const uploadRef = useRef<HTMLInputElement>(null);
+  const imgUploadRef = useRef<HTMLInputElement>(null);
+  const csvUploadRef = useRef<HTMLInputElement>(null);
 
-  function handleRequestUpload() {
+  function handleRequestUpload(uploadType: string) {
     // Pull up the file upload window
-    if (uploadRef.current != undefined) {
-      uploadRef.current.click();
+    if (imgUploadRef.current != undefined && uploadType == 'image') {
+      imgUploadRef.current.click();
+    } else if (csvUploadRef.current != undefined && uploadType == 'csv') {
+      csvUploadRef.current.click();
     }
   }
 
-  function handleImgUpload(e: any) {
-    // Update the PDF background image to whatever the user
-    // uploaded.
-    setBgImg(URL.createObjectURL(e.target.files[0]));
+  function handleFileUpload(e: any) {
+    if (e.target.files[0].type.includes('image')) {
+      setBgImg(URL.createObjectURL(e.target.files[0]));
+    } else if (e.target.files[0].type == 'text/csv') {
+      setCsv(URL.createObjectURL(e.target.files[0]));
+    }
   }
 
   function handleShowPdf() {
@@ -42,11 +47,12 @@ export default function App() {
 
         {showPdf ? <Certificate bg={bgImg} /> : <Customizer bg={bgImg}></Customizer>}
 
-        <Controls upload={handleRequestUpload} show={handleShowPdf}/>
+        <Controls upload={handleRequestUpload} show={handleShowPdf} />
 
       </div>
 
-      <input className='hidden' ref={uploadRef} type='file' accept='image/*' onChange={handleImgUpload} />
+      <input className='hidden' ref={imgUploadRef} type='file' accept='image/*' onChange={handleFileUpload} />
+      <input className='hidden' ref={csvUploadRef} type='file' accept='text/csv' onChange={handleFileUpload} />
     </>
   );
 }
