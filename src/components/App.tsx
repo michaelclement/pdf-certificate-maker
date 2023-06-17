@@ -49,7 +49,7 @@ export default function App() {
   }
 
   function handleShowHelp() {
-    alert('Upload a background image and a CSV of names/dates. Then click "Generate PDF" and voila!');
+    alert('Upload a background image and a CSV of names/dates. Then click "Generate PDF", and voila!');
   }
 
   return (
