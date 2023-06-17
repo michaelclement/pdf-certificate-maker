@@ -6,7 +6,7 @@ import { useState, useRef } from 'react';
 import Certificate from './Certificate';
 import Controls from './Controls';
 
-import GridImg from '../assets/grid.jpg';
+import GridImg from '../assets/grid.svg';
 import Customizer from './Customizer';
 import CsvViewer from './CsvViewer';
 
