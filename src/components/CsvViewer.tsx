@@ -62,8 +62,8 @@ export default function CsvViewer(props: any) {
   return (
     <div className='w-full mt-10'>
 
-      <h1 id='pdf-preview-title' className='text-center rounded-lg text-zinc-800 p-3 font-bold text-3xl
-        h-[60px] w-[200px] m-auto'>CSV Data</h1>
+      <h1 className='text-center rounded-lg text-zinc-800 p-3 font-bold text-3xl
+        h-[60px] w-[200px] m-auto pdf-preview-title'>CSV Data</h1>
 
       <div id='pdf-preview' className='h-[400px] w-[576px] border-4 border-zinc-800 
         m-auto bg-no-repeat bg-center bg-contain overflow-auto mb-10'>

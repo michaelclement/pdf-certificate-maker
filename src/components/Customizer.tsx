@@ -17,8 +17,8 @@ export default function Customizer(props: any) {
     <div className='flex flex-col'>
       <div className='h-full w-full mt-10'>
 
-        <h1 id='pdf-preview-title' className='text-center rounded-lg text-zinc-800 p-3 font-bold text-3xl
-        h-[60px] w-[200px] m-auto'>PDF Preview</h1>
+        <h1 id='' className='text-center rounded-lg text-zinc-800 p-3 font-bold text-3xl
+        pdf-preview-title h-[60px] w-[200px] m-auto'>PDF Preview</h1>
 
         <div id='pdf-preview' className='h-[400px] w-[576px] bg-zinc-300 border-4 border-zinc-800 
         m-auto bg-no-repeat bg-center bg-cover overflow-hidden' style={{
