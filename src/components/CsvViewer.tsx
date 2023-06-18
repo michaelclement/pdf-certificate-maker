@@ -8,7 +8,7 @@ export default function CsvViewer(props: any) {
     // TODO: clean this up when I have two braincells functioning
     let rows = props.csv.split('\n');
     let header = rows[0];
-    let cleanHeaders:any = [];
+    let cleanHeaders: any = [];
     let rowObj: any = [];
     // Convert string of CSV data into a proper object representation
     rows.slice(1).forEach((el: string, index: number) => {
@@ -17,7 +17,12 @@ export default function CsvViewer(props: any) {
         columnName = columnName.trim();
         if (!cleanHeaders.includes(columnName)) cleanHeaders.push(columnName);
         if (el != '') {
-          row[columnName] = el.split(',')[headerIdx].trim();
+          let newarr: string[] = [];
+          // Get data from row and account for commas couched in ""
+          el.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g)?.forEach(
+            item => newarr.push(item.replaceAll('"', ''))
+          );
+          row[columnName] = newarr[headerIdx].trim();
         };
       })
       rowObj.push(row);
