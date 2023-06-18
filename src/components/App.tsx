@@ -10,7 +10,8 @@ import GridImg from '../assets/grid.svg';
 import Customizer from './Customizer';
 import CsvViewer from './CsvViewer';
 
-import Help from '../assets/help_center_FILL0_wght400_GRAD0_opsz48.svg';
+import HelpIcon from '../assets/help_center_FILL0_wght400_GRAD0_opsz48.svg';
+import HelpScreen from './Help';
 
 export default function App() {
   const [bgImg, setBgImg] = useState(GridImg);
@@ -19,6 +20,7 @@ export default function App() {
   const [showPdf, setShowPdf] = useState(false);
   const [nameTopMargin, setNameTopMargin] = useState(35);
   const [dateTopMargin, setDateTopMargin] = useState(55);
+  const [showHelp, setShowHelp] = useState(false);
 
   const imgUploadRef = useRef<HTMLInputElement>(null);
   const csvUploadRef = useRef<HTMLInputElement>(null);
@@ -49,7 +51,7 @@ export default function App() {
   }
 
   function handleShowHelp() {
-    alert('Upload a background image and a CSV of names/dates. Then click "Generate PDF", and voila!');
+    setShowHelp(!showHelp);
   }
 
   return (
@@ -61,7 +63,7 @@ export default function App() {
 
           <button className='bg-zinc-800 text-white font-bold h-[35px] w-[35px] 
             flex green-btn pt-[3px]' onClick={handleShowHelp}>
-            <img className='ml-[5px]' src={Help}></img>
+            <img className='ml-[5px]' src={HelpIcon}></img>
           </button>
         </h1>
 
@@ -73,6 +75,8 @@ export default function App() {
             {csv !== '' && !showPdf ? <CsvViewer csv={csv} setDataSource={setDataSource} /> : ''}
           </div>
         }
+
+        {showHelp ? <HelpScreen/> : ''}
 
         <div className='fixed bottom-0 w-full'>
           <Controls upload={handleRequestUpload} show={handleShowPdf} showPdf={showPdf} />

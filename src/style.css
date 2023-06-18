@@ -15,8 +15,8 @@ iframe {
   width: 100%;
 }
 
-#pdf-preview-title {
-  text-shadow: 3px 3px rgb(234 179 8 / var(--tw-text-opacity));
+.pdf-preview-title {
+  text-shadow: 3px 3px rgb(234 179 8);
 }
 
 #pdf-preview {
@@ -26,12 +26,12 @@ iframe {
 .green-btn,
 .yellow-btn {
   transition-duration: .2s;
-  box-shadow: 3px 3px rgb(39 39 42 / var(--tw-border-opacity));
+  box-shadow: 3px 3px rgb(39 39 42);
 }
 
 .green-btn:hover,
 .yellow-btn:hover {
-  box-shadow: 5px 5px rgb(39 39 42 / var(--tw-border-opacity));
+  box-shadow: 5px 5px rgb(39 39 42);
 }
 
 .range {
