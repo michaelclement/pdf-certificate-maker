@@ -7,6 +7,8 @@ from a list of names. Think Adobe Indesign's Data Merge feature.
 To be used for mass-producing certificates of achievement and other such
 things.
 
+Live example here: https://michaelclement.github.io/pdf-certificate-maker/dist/index.html
+
 ## Development Process
 This section covers  developing the React app, webpack usage,
 and some other useful details.

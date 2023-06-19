@@ -28,8 +28,8 @@ export default function CsvViewer(props: any) {
       rowObj.push(row);
     });
 
-    if (!cleanHeaders.includes('Name') || !cleanHeaders.includes('Date')) {
-      alert(`CSV headers mismatch. "Name" and "Date" columns must be present.`)
+    if (!cleanHeaders.includes('Name') || !cleanHeaders.includes('Subtitle')) {
+      alert(`CSV headers mismatch. "Name" and "Subtitle" columns must be present.`)
       return;
     }
 

@@ -27,11 +27,12 @@ export default function HelpScreen(props: any) {
         <h1 className='font-bold text-3xl text-center pdf-preview-title'>How to Use</h1>
         <ul className='list-decimal'>
           <li>Upload a background image (must be jpeg, png, or svg)</li>
-          <li>Upload a <a className='underline text-yellow-500' href='https://en.wikipedia.org/wiki/Comma-separated_values'>CSV</a> file
-            with columns <b>"Name"</b> and <b>"Date"</b>. The date column doesn't have to be
-            a date, it can be any text (though if the text itself contains commas, be sure
-            they're wrapped in double quotes, e.g. "June, 2023".</li>
-          <li>Adjust the vertical position of the Name and Date fields using the
+          <li>
+            Upload a <a className='underline text-yellow-500' href='https://en.wikipedia.org/wiki/Comma-separated_values'>CSV</a> file
+            with columns <b>"Name"</b> and <b>"Subtitle"</b>. Note, if the text itself
+            contains commas, be sure they're wrapped in double quotes, e.g. "June, 2023".
+          </li>
+          <li>Adjust the vertical position of the Name and Subtitle fields using the
             preview window and sliders</li>
           <li>When you're satisfied with the layout, press <b>Generate PDF</b></li>
           <li>Download your PDF!</li>
