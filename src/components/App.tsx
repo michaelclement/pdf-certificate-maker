@@ -21,6 +21,7 @@ export default function App() {
   const [nameTopMargin, setNameTopMargin] = useState(35);
   const [subtitleTopMargin, setSubtitleTopMargin] = useState(55);
   const [showHelp, setShowHelp] = useState(false);
+  const [font, setFont] = useState('Bebas Neue');
 
   const imgUploadRef = useRef<HTMLInputElement>(null);
   const csvUploadRef = useRef<HTMLInputElement>(null);
@@ -68,15 +69,19 @@ export default function App() {
         </h1>
 
         {showPdf ? <Certificate bg={bgImg} dataSource={dataSource}
-          tops={[nameTopMargin, subtitleTopMargin]} /> :
+          tops={[nameTopMargin, subtitleTopMargin]} font={font} /> :
           <div className='pb-[100px]'>
-            <Customizer bg={bgImg} tops={[nameTopMargin, subtitleTopMargin]}
-              setNameTop={setNameTopMargin} setSubtitleTop={setSubtitleTopMargin}></Customizer>
+            <Customizer
+              bg={bgImg}
+              tops={[nameTopMargin, subtitleTopMargin]}
+              setNameTop={setNameTopMargin}
+              setSubtitleTop={setSubtitleTopMargin}
+              setFont={setFont} />
             {csv !== '' && !showPdf ? <CsvViewer csv={csv} setDataSource={setDataSource} /> : ''}
           </div>
         }
 
-        {showHelp ? <HelpScreen/> : ''}
+        {showHelp ? <HelpScreen /> : ''}
 
         <div className='fixed bottom-0 w-full'>
           <Controls upload={handleRequestUpload} show={handleShowPdf} showPdf={showPdf} />

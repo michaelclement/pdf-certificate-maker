@@ -41,8 +41,14 @@ iframe {
   box-shadow: 5px 5px rgb(39 39 42);
 }
 
-.range {
+.range,
+select {
+  transition-duration: .2s;
   box-shadow: 3px 3px rgb(234 179 8);
+  cursor: pointer;
+}
+select:hover {
+  box-shadow: 5px 5px rgb(234 179 8);
 }
 
 .constrained {

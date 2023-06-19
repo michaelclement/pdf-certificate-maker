@@ -8,6 +8,16 @@ export default function Certificate(props: any) {
     src: 'https://fonts.gstatic.com/s/bebasneue/v10/JTUSjIg69CK48gW7PXooxW4.ttf',
   })
 
+  Font.register({
+    family: 'Merriweather',
+    src: 'https://fonts.gstatic.com/s/merriweather/v30/u-440qyriQwlOrhSvowK_l5Oew.ttf',
+  })
+
+  Font.register({
+    family: 'Roboto',
+    src: 'https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Me5Q.ttf',
+  })
+
   const [styles, setStyles] = useState(StyleSheet.create({
     document: {
       height: '100%',
@@ -43,7 +53,7 @@ export default function Certificate(props: any) {
       color: "black",
       fontSize: "30px",
       textAlign: "center",
-      fontFamily: "Bebas Neue",
+      fontFamily: props.font,
     },
     subtitleText: {
       position: "absolute",
@@ -53,7 +63,7 @@ export default function Certificate(props: any) {
       color: "black",
       fontSize: "30px",
       textAlign: "center",
-      fontFamily: "Bebas Neue",
+      fontFamily: props.font,
     },
   }));
 
