@@ -1,51 +1,60 @@
 import { useEffect, useState } from 'react';
 
-import { Page, Text, Image, View, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
+import { Font, Page, Text, Image, View, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
 
 export default function Certificate(props: any) {
+  Font.register({
+    family: 'Bebas Neue',
+    src: 'https://fonts.gstatic.com/s/bebasneue/v10/JTUSjIg69CK48gW7PXooxW4.ttf',
+  })
+
   const [styles, setStyles] = useState(StyleSheet.create({
-      document: {
-        height: '100%',
-      },
-      page: {
-        flexDirection: 'row',
-        backgroundColor: '#E4E4E4'
-      },
-      parent: {
-        flexGrow: 1,
-      },
-      section: {
-        margin: 10,
-        padding: 10,
-        flexGrow: 1
-      },
-      bgImg: {
-        position: "absolute",
-        left: '0px',
-        right: '0px',
-        height: '100%',
-        marginHorizontal: 'auto',
-        textAlign: "center",
-        justifyContent: 'center',
-        objectFit: 'cover',
-        objectPosition: 'center'
-      },
-      nameText: {
-        position: "absolute",
-        top: props.tops[0] + '%',
-        width: "100%",
-        height: "0px",
-        color: "black",
-        textAlign: "center",
-      },
-      subtitleText: {
-        position: "absolute",
-        top: props.tops[1] + '%',
-        width: "100%",
-        height: "0px",
-        color: "black",
-        textAlign: "center",
-      },
+    document: {
+      height: '100%',
+    },
+    page: {
+      flexDirection: 'row',
+      backgroundColor: '#E4E4E4'
+    },
+    parent: {
+      flexGrow: 1,
+    },
+    section: {
+      margin: 10,
+      padding: 10,
+      flexGrow: 1
+    },
+    bgImg: {
+      position: "absolute",
+      left: '0px',
+      right: '0px',
+      height: '100%',
+      marginHorizontal: 'auto',
+      textAlign: "center",
+      justifyContent: 'center',
+      objectFit: 'cover',
+      objectPosition: 'center'
+    },
+    nameText: {
+      position: "absolute",
+      top: props.tops[0] + '%',
+      width: "100%",
+      height: "0px",
+      color: "black",
+      fontSize: "30px",
+      textAlign: "center",
+      fontFamily: "Bebas Neue",
+    },
+    subtitleText: {
+      position: "absolute",
+      top: props.tops[1] + '%',
+      width: "100%",
+      height: "0px",
+      color: "black",
+      fontSize: "30px",
+      textAlign: "center",
+      fontFamily: "Bebas Neue",
+    },
   }));
 
   return (
