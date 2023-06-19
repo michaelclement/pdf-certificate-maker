@@ -38,7 +38,7 @@ export default function Certificate(props: any) {
         color: "black",
         textAlign: "center",
       },
-      dateText: {
+      subtitleText: {
         position: "absolute",
         top: props.tops[1] + '%',
         width: "100%",
@@ -59,7 +59,7 @@ export default function Certificate(props: any) {
                   <View style={styles.parent}>
                     <Image style={styles.bgImg} src={props.bg} />
                     <Text style={styles.nameText}>{row['Name']}</Text>
-                    <Text style={styles.dateText}>{row['Date']}</Text>
+                    <Text style={styles.subtitleText}>{row['Subtitle']}</Text>
                   </View>
                 </Page>
               }

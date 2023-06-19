@@ -38,6 +38,13 @@ iframe {
   box-shadow: 3px 3px rgb(234 179 8);
 }
 
+.constrained {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 25px;
+  max-width: 568px;
+}
+
 /*Example of bundling a bunch of tailwind classes into a single reusable class:*/
 @layer components {
   .primary-btn {

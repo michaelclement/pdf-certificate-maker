@@ -19,7 +19,7 @@ export default function App() {
   const [dataSource, setDataSource] = useState([]);
   const [showPdf, setShowPdf] = useState(false);
   const [nameTopMargin, setNameTopMargin] = useState(35);
-  const [dateTopMargin, setDateTopMargin] = useState(55);
+  const [subtitleTopMargin, setSubtitleTopMargin] = useState(55);
   const [showHelp, setShowHelp] = useState(false);
 
   const imgUploadRef = useRef<HTMLInputElement>(null);
@@ -68,10 +68,10 @@ export default function App() {
         </h1>
 
         {showPdf ? <Certificate bg={bgImg} dataSource={dataSource}
-          tops={[nameTopMargin, dateTopMargin]} /> :
+          tops={[nameTopMargin, subtitleTopMargin]} /> :
           <div className='pb-[100px]'>
-            <Customizer bg={bgImg} tops={[nameTopMargin, dateTopMargin]}
-              setNameTop={setNameTopMargin} setDateTop={setDateTopMargin}></Customizer>
+            <Customizer bg={bgImg} tops={[nameTopMargin, subtitleTopMargin]}
+              setNameTop={setNameTopMargin} setSubtitleTop={setSubtitleTopMargin}></Customizer>
             {csv !== '' && !showPdf ? <CsvViewer csv={csv} setDataSource={setDataSource} /> : ''}
           </div>
         }
