@@ -19,7 +19,8 @@ export default function CsvViewer(props: any) {
         if (el != '') {
           let newarr: string[] = [];
           // Get data from row and account for commas couched in ""
-          el.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g)?.forEach(
+          // TODO: doesn't play nice with nested quotes yet
+          el.match(/".+?"|[^"]+?(?=,)|(?<=,)[^"]+/g)?.forEach(
             item => newarr.push(item.replaceAll('"', ''))
           );
           row[columnName] = newarr[headerIdx].trim();

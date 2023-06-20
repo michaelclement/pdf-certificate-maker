@@ -29,8 +29,7 @@ export default function HelpScreen(props: any) {
           <li>Upload a background image (must be jpeg, png, or svg)</li>
           <li>
             Upload a <a className='underline text-yellow-500' href='https://en.wikipedia.org/wiki/Comma-separated_values'>CSV</a> file
-            with columns <b>"Name"</b> and <b>"Subtitle"</b>. Note, if the text itself
-            contains commas, be sure they're wrapped in double quotes, e.g. "June, 2023".
+            with columns <b>"Name"</b> and <b>"Subtitle"</b>. 
           </li>
           <li>Adjust the vertical position of the Name and Subtitle fields using the
             preview window and sliders</li>
