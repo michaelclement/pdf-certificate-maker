@@ -37,7 +37,7 @@ export default function Customizer(props: any) {
         </div>
 
         <div className='flex justify-between my-5 constrained items-center '>
-          <label htmlFor={'subtitle-vert'} className='font-mono'>Adjust subtitle vertical placement</label>
+          <label htmlFor={'subtitle-vert'} className='font-mono'>Change font</label>
           <select name='subtitle-vet' className='w-[200px] my-[5px] border-zinc-800 
           ml-[15px] p-[3px] border-2 range'
             value={props.font} onChange={(e)=> props.setFont(e.target.value)}>
