@@ -48,6 +48,10 @@ export default function App() {
   }
 
   function handleShowPdf() {
+    if (dataSource.length <= 0) {
+      alert("Please upload a CSV before generating PDFs.");
+      return;
+    };
     setShowPdf(!showPdf);
   }
 
