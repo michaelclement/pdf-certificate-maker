@@ -85,7 +85,7 @@ export default function App() {
           </div>
         }
 
-        {showHelp ? <HelpScreen /> : ''}
+        {showHelp ? <HelpScreen toggle={handleShowHelp}/> : ''}
 
         <div className='fixed bottom-0 w-full'>
           <Controls upload={handleRequestUpload} show={handleShowPdf} showPdf={showPdf} />

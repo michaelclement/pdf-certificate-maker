@@ -40,7 +40,7 @@ export default function HelpScreen(props: any) {
 
       <form method={'dialog'}>
         <button className='bg-yellow-500 text-zinc-800 p-3 font-bold 
-        h-[50px] m-[15px] flex yellow-btn m-auto'>
+        h-[50px] m-[15px] flex yellow-btn m-auto' onClick={props.toggle}>
           Ok!
         </button>
       </form>
